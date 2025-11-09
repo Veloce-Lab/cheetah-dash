@@ -18,13 +18,20 @@
                 </div>
                 <div class="menu">
                     <button id="start-btn" class="btn primary">Start Game</button>
-                    <button id="high-scores-btn" class="btn secondary">High Scores</button>
+                    <div class="difficulty-selector">
+                        <h3>Difficulty</h3>
+                        <div class="difficulty-buttons">
+                            <button class="difficulty-btn active" data-difficulty="easy">Easy</button>
+                            <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                            <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+                        </div>
+                    </div>
                     <button id="how-to-play-btn" class="btn secondary">How to Play</button>
                 </div>
                 <div class="game-stats">
                     <div class="stat">
-                        <span class="stat-value" id="global-players">0</span>
-                        <span class="stat-label">Players Worldwide</span>
+                        <span class="stat-value" id="high-score">0</span>
+                        <span class="stat-label">High Score</span>
                     </div>
                 </div>
             </div>
@@ -34,31 +41,34 @@
                 <h2>How to Play</h2>
                 <div class="instructions">
                     <div class="instruction">
-                        <span class="key">SPACE</span>
-                        <span>or</span>
                         <span class="key">TAP</span>
                         <span>to Jump</span>
                     </div>
                     <div class="instruction">
-                        <span class="key">DOWN</span>
+                        <span class="key">SWIPE DOWN</span>
                         <span>to Slide</span>
+                    </div>
+                    <div class="instruction">
+                        <span class="key">TAP & HOLD</span>
+                        <span>for Higher Jump</span>
+                    </div>
+                </div>
+                <div class="mobile-controls-demo">
+                    <div class="control-demo">
+                        <div class="tap-area">TAP HERE</div>
+                        <span>Jump</span>
+                    </div>
+                    <div class="control-demo">
+                        <div class="swipe-area">SWIPE DOWN</div>
+                        <span>Slide</span>
                     </div>
                 </div>
                 <button id="back-from-help-btn" class="btn secondary">Back</button>
             </div>
 
-            <!-- High Scores Screen -->
-            <div id="high-scores-screen" class="screen">
-                <h2>🏆 High Scores</h2>
-                <div id="scores-list" class="scores-list">
-                    <div class="loading">No scores yet. Be the first!</div>
-                </div>
-                <button id="back-from-scores-btn" class="btn secondary">Back</button>
-            </div>
-
             <!-- Game Screen -->
             <div id="game-screen" class="screen">
-                <canvas id="game-canvas" width="800" height="400"></canvas>
+                <canvas id="game-canvas"></canvas>
                 <div class="hud">
                     <div class="score-display">Score: <span id="score">0</span></div>
                     <div class="distance-display">Distance: <span id="distance">0</span>m</div>
@@ -66,6 +76,17 @@
                         <span class="life">❤️</span>
                         <span class="life">❤️</span>
                         <span class="life">❤️</span>
+                    </div>
+                    <div class="difficulty-badge" id="difficulty-badge">Easy</div>
+                </div>
+                
+                <!-- Mobile Control Overlay -->
+                <div class="mobile-controls">
+                    <div class="control-button" id="jump-btn">
+                        <span>JUMP</span>
+                    </div>
+                    <div class="control-button" id="slide-btn">
+                        <span>SLIDE</span>
                     </div>
                 </div>
             </div>
@@ -82,6 +103,10 @@
                         <div class="final-stat">
                             <span class="stat-label">Distance</span>
                             <span class="stat-value" id="final-distance">0m</span>
+                        </div>
+                        <div class="final-stat">
+                            <span class="stat-label">Difficulty</span>
+                            <span class="stat-value" id="final-difficulty">Easy</span>
                         </div>
                     </div>
                     <div class="action-buttons">
@@ -102,6 +127,9 @@
     </audio>
     <audio id="crash-sound" preload="auto">
         <source src="sounds/crash.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="game-music" loop preload="auto">
+        <source src="sounds/music.mp3" type="audio/mpeg">
     </audio>
 
     <script src="js/game.js"></script>
