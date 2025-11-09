@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheetah Dash - Run Like the Wind!</title>
-    <meta name="description" content="An addictive cheetah running game. Jump, dash, and survive!">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -44,25 +43,6 @@
                         <span class="key">DOWN</span>
                         <span>to Slide</span>
                     </div>
-                    <div class="instruction">
-                        <span class="key">SHIFT</span>
-                        <span>for Speed Boost</span>
-                    </div>
-                    <div class="powerups">
-                        <h3>Power-ups</h3>
-                        <div class="powerup-item">
-                            <div class="powerup-icon" style="background-color: #FFD700;">⚡</div>
-                            <span>Speed Boost - Run faster for 3 seconds</span>
-                        </div>
-                        <div class="powerup-item">
-                            <div class="powerup-icon" style="background-color: #00FF00;">🛡️</div>
-                            <span>Shield - Become invincible for 5 seconds</span>
-                        </div>
-                        <div class="powerup-item">
-                            <div class="powerup-icon" style="background-color: #FF6B6B;">2×</div>
-                            <span>Double Points - Double your score for 10 seconds</span>
-                        </div>
-                    </div>
                 </div>
                 <button id="back-from-help-btn" class="btn secondary">Back</button>
             </div>
@@ -71,7 +51,7 @@
             <div id="high-scores-screen" class="screen">
                 <h2>🏆 High Scores</h2>
                 <div id="scores-list" class="scores-list">
-                    <div class="loading">Loading scores...</div>
+                    <div class="loading">No scores yet. Be the first!</div>
                 </div>
                 <button id="back-from-scores-btn" class="btn secondary">Back</button>
             </div>
@@ -86,20 +66,6 @@
                         <span class="life">❤️</span>
                         <span class="life">❤️</span>
                         <span class="life">❤️</span>
-                    </div>
-                    <div class="powerup-indicators">
-                        <div id="speed-boost-indicator" class="powerup-indicator hidden">
-                            <span>⚡</span>
-                            <div class="powerup-timer"></div>
-                        </div>
-                        <div id="shield-indicator" class="powerup-indicator hidden">
-                            <span>🛡️</span>
-                            <div class="powerup-timer"></div>
-                        </div>
-                        <div id="double-points-indicator" class="powerup-indicator hidden">
-                            <span>2×</span>
-                            <div class="powerup-timer"></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -117,17 +83,6 @@
                             <span class="stat-label">Distance</span>
                             <span class="stat-value" id="final-distance">0m</span>
                         </div>
-                        <div class="final-stat">
-                            <span class="stat-label">Personal Best</span>
-                            <span class="stat-value" id="personal-best">0</span>
-                        </div>
-                    </div>
-                    <div id="new-high-score" class="new-high-score hidden">
-                        🎉 New High Score! 🎉
-                    </div>
-                    <div class="player-name-input hidden" id="player-name-section">
-                        <input type="text" id="player-name" placeholder="Enter your name" maxlength="20">
-                        <button id="submit-score-btn" class="btn primary">Submit Score</button>
                     </div>
                     <div class="action-buttons">
                         <button id="play-again-btn" class="btn primary">Play Again</button>
@@ -148,15 +103,7 @@
     <audio id="crash-sound" preload="auto">
         <source src="sounds/crash.mp3" type="audio/mpeg">
     </audio>
-    <audio id="powerup-sound" preload="auto">
-        <source src="sounds/powerup.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="game-music" loop preload="auto">
-        <source src="sounds/music.mp3" type="audio/mpeg">
-    </audio>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/supabase.js"></script>
     <script src="js/game.js"></script>
 </body>
 </html>
